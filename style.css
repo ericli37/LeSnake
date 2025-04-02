@@ -156,3 +156,6 @@ a span:nth-child(4){
 .play-board .food{
     background: red;
 }
+.play-board .head{
+    background: #0FFF50;
+}
