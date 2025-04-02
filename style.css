@@ -17,6 +17,15 @@ body{
     font-weight: bold;
 }
 
+.title{
+    color: #0FFF50;
+    font-size: 60px;
+    top: 25vh;
+    left: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
 a{
     font-size: 50px;
     position: relative;
