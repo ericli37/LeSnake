@@ -1,6 +1,23 @@
 document.getElementById('playButton').addEventListener('click', () => {
     document.getElementById('menu').style.display = 'none';
+    document.getElementById('settings').style.display = 'none';
     document.getElementById('game').style.display = 'block';
+});
+document.getElementById('settingsButton').addEventListener('click', () => {
+    document.getElementById('menu').style.display = 'none';
+    document.getElementById('game').style.display = 'none';
+    document.getElementById('settings').style.display = 'block';
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+    resetScore();
+});
+
+document.getElementById('back1').addEventListener('click', () => {
+    back();
+});
+document.getElementById('back2').addEventListener('click', () => {
+    back();
 });
 
 const playBoard = document.querySelector('.play-board');
@@ -20,8 +37,33 @@ let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerText = `High Score: ${highScore}`;
 
 const changeFoodPosition = () => {
-    foodX = Math.floor(Math.random() * 30) + 1;
-    foodY = Math.floor(Math.random() * 20) + 1;
+    let isOnSnake;
+    do {
+        isOnSnake = false;
+        foodX = Math.floor(Math.random() * 30) + 1;
+        foodY = Math.floor(Math.random() * 20) + 1;
+
+        // Check if the food position overlaps with the snake's body
+        for (let i = 0; i < snakeBody.length; i++) {
+            if (snakeBody[i][0] === foodX && snakeBody[i][1] === foodY) {
+                isOnSnake = true;
+                break;
+            }
+        }
+    } while (isOnSnake);
+}
+
+const resetScore = () => {
+    score = 0;
+    localStorage.setItem("high-score", 0);
+    highScoreElement.innerText = `High Score: ${0}`;
+}
+
+const back = () => {
+    document.getElementById('menu').style.display = 'block';
+    document.getElementById('settings').style.display = 'none';
+    document.getElementById('game').style.display = 'none';
+    location.reload();
 }
 
 const handleGameOver = () => {
@@ -91,5 +133,5 @@ const initGame = () => {
     playBoard.innerHTML = htmlMarkup;
 }
 changeFoodPosition();
-setIntervalId = setInterval(initGame, 100);
+setIntervalId = setInterval(initGame, 85);
 document.addEventListener("keydown", changeDirection);

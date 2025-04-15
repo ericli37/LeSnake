@@ -10,6 +10,9 @@
     </head>
     <body>
         <div id="menu">
+            <h1>
+                Snake 
+            </h1>
             <a id="playButton">
                 <span></span>
                 <span></span>
@@ -17,7 +20,7 @@
                 <span></span>
                 Play
             </a>
-            <a href="https://www.linkedin.com/in/yousef-taha-615994212/?scrlybrkr" target="_blank">
+            <a id="settingsButton">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -30,7 +33,7 @@
                 <span></span>
                 <span></span>
                 Yousef Taha's LinkedIn
-            </a>
+            </a>  
         </div>
         <div id="game" style="display: none;">
             <div class="wrapper">
@@ -44,6 +47,22 @@
                     <i data-key="ArrowUp" class = "fa-solid fa-arrow-up-long"></i>
                     <i data-key="ArrowRight" class = "fa-solid fa-arrow-right-long"></i>
                     <i data-key="ArrowDown" class = "fa-solid fa-arrow-down-long"></i>
+                </div>
+            </div>
+            <button id="back1">Back</button>
+        </div>
+        <div id="settings" style="display: none;">
+            <div class="settings-wrapper">
+                <div class="settings-content">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                    <button id="saveSettings">Save Settings</button>
+                    <button id="reset">Reset</button>
+                    <button id="back2">Back</button>
                 </div>
             </div>
         </div>
