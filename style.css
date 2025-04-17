@@ -37,12 +37,14 @@ h1 {
 }
 
 a {
-    font-size: 30px;
-    width: 20%;
-    height: 7.5%;
+    font-size: 45px;
+    width: 33%;
+    height: 15%;
     position: relative;
-    display: inline-block;
-    padding: 20px 40px;
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 0; /* Remove padding to avoid misalignment */
     margin: 20px 0;
     text-align: center;
     color: #0FFF50;
