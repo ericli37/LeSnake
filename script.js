@@ -32,6 +32,7 @@ let snakeBody = [];
 let velocityX= 0, velocityY = 0;
 let setIntervalId;
 let score = 0;
+let difficulty = 1;
 
 let highScore = localStorage.getItem("high-score") || 0;
 highScoreElement.innerText = `High Score: ${highScore}`;
